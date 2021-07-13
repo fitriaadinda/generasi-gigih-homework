@@ -1,30 +1,10 @@
 import './App.css';
 import React from 'react';
-import axios from 'axios';
+import data from './Data';
+// import axios from 'axios';
 
 const App = () => {
-
-  axios
-    .get(
-      "https://api.spotify.com/v1/browse/new-releases",{
-        headers: {
-          'Authorization': `Bearer ${process.env.REACT_APP_SPOTIFY_ACCESS_TOKEN}`
-        }
-      }
-    )
-    .then(function (response) {
-      console.log(response.data);
-
-      document.getElementById("Images").src = response.data.albums.items[0].images[0].url;
-      document.getElementById("track-Title").innerHTML = `Track Title: ${response.data.albums.items[0].name}`
-      document.getElementById("track-Artist").innerHTML = `Track Artist: ${response.data.albums.items[0].artists[0].name}`
-      document.getElementById("track-Album").innerHTML = `Track Album: ${response.data.albums.items[0].name}`
-    })
-    .catch(function (error) {
-      console.error(error);
-    })
     
-
   return ( 
     <div>
       <h1>CREATE PLAYLIST</h1>
@@ -40,15 +20,14 @@ const App = () => {
         <button type="button" onclick="">Submit</button>
       </form>
       <div className="card">
-        <img id="Images" src="" alt="" />
-        <p id="track-Title"></p>
-        <p id="track-Artist"></p>
-        <p id="track-Album"></p>
+        <img id="Images" src={data.album.images[1].url} alt="" />
+        <p id="track-Title">Track Tittle: {data.album.name}</p>
+        <p id="track-Artist">Track Artist: {data.album.artists[0].name}</p>
+        <p id="track-Album">Track Album: {data.album.name}</p>
         <button type="button">Select</button>
     </div>
     </div>
   );
 }
-
 
 export default App;
