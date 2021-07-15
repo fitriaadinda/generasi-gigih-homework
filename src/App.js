@@ -1,8 +1,8 @@
 import './App.css';
 // import axios from 'axios';
 import data from './Data';
-import FormAddPlaylist from './Component/Component/formAddPlaylist';
-import ListMusic from './Component/Component/listmusic';
+import FormAddPlaylist from './Components/formAddPlaylist';
+import ListMusic from './Components/listmusic';
 import React from 'react';
 
 const App = () => {
