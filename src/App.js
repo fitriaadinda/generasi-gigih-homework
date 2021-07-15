@@ -1,31 +1,17 @@
 import './App.css';
-import React from 'react';
-import data from './Data';
 // import axios from 'axios';
+import data from './Data';
+import FormAddPlaylist from './Component/Component/formAddPlaylist';
+import ListMusic from './Component/Component/listmusic';
+import React from 'react';
 
 const App = () => {
-    
+
   return ( 
-    <div>
+    <div className="App">
       <h1>CREATE PLAYLIST</h1>
-      <form>
-        <div>
-          <label>Title</label>
-          <input type="text"></input>
-        </div>
-        <div>
-          <label>Deskripsi</label>
-          <input type="text"></input>
-        </div>
-        <button type="button" onclick="">Submit</button>
-      </form>
-      <div className="card">
-        <img id="Images" src={data.album.images[1].url} alt="" />
-        <p id="track-Title">Track Tittle: {data.album.name}</p>
-        <p id="track-Artist">Track Artist: {data.album.artists[0].name}</p>
-        <p id="track-Album">Track Album: {data.album.name}</p>
-        <button type="button">Select</button>
-    </div>
+      <FormAddPlaylist />
+      <ListMusic url={data.album.images[1].url} title={data.album.name} artits={data.album.artists[0].name} album={data.album.name}/>
     </div>
   );
 }

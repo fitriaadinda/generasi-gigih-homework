@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  padding: 15px;
 }
 
 .App-logo {
@@ -8,11 +9,11 @@
 }
 
 .card {
-            margin: 20px;
-            padding: 10px;
-            background-color: antiquewhite;
-            border: 2px solid black;
-        }
+  margin: 20px;
+  padding: 10px;
+  background-color: antiquewhite;
+  border: 2px solid black;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -39,6 +40,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
