@@ -1,4 +1,4 @@
-const ListMusic = ({url, title, artists, album}) =>{
+const Playlist = ({url, title, artists, album}) =>{
     return(
         <div>
             <div className="card">
@@ -12,4 +12,4 @@ const ListMusic = ({url, title, artists, album}) =>{
     );
 }
 
-export default ListMusic;
+export default Playlist;
