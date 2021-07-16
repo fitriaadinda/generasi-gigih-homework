@@ -11,7 +11,7 @@ const App = () => {
     <div className="App">
       <h1>CREATE PLAYLIST</h1>
       <FormAddPlaylist />
-      <Playlist url={data.album.images[1].url} title={data.album.name} artits={data.album.artists[0].name} album={data.album.name}/>
+      <Playlist url={data.album.images[1].url} title={data.album.name} artists={data.album.artists[0].name} album={data.album.name}/>
     </div>
   );
 }
