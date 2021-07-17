@@ -1,14 +1,14 @@
-const Playlist = ({url, title, artists, album}) =>{
+const Playlist = ({url, title, artist, album}) =>{
     return(
-        <div>
-            <div className="card">
-                <img id="Images" src={url} alt={title} />
-                <p id="track-Title">Track Tittle: {title} </p>
-                <p id="track-Artist">Track Artist: {artists} </p>
-                <p id="track-Album">Track Album: {album}</p>
-                <button type="button">Select</button>
-            </div>
-        </div>
+        <tbody>
+            <tr>
+                <th scope="row"></th>
+                <td><img className="img" src={url} alt={title} /></td>
+                <td>{title}</td>
+                <td>{artist}</td>
+                <td>{album}</td>
+            </tr>
+        </tbody>
     );
 }
 
