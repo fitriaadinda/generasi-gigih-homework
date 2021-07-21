@@ -1,14 +1,15 @@
 const Navbar = () =>{
+    const handleClick = () =>{
+        let scope = encodeURIComponent('playlist-modify-private');
+        let redirect_uri = encodeURIComponent('http://localhost:3000');
+        
+        window.location.href = `https://accounts.spotify.com/authorize?response_type=token&client_id=${process.env.REACT_APP_SPOTIFY_CLIENT_ID}&scope=${scope}&redirect_uri=${redirect_uri}`;
+    }
+
     return(
         <div>
             <div className="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
-                <a className="nav-link" data-toggle="pill" role="tab" aria-controls="v-pills-home" aria-selected="true">...</a>
-                <a className="nav-link active" data-toggle="pill" role="tab" aria-controls="v-pills-home"
-                    aria-selected="true">Home</a>
-                <a className="nav-link" data-toggle="pill" role="tab" aria-controls="v-pills-profile"
-                    aria-selected="false">Profile</a>
-                <a className="nav-link" data-toggle="pill" role="tab" aria-controls="v-pills-messages" aria-selected="false">Create
-                    Playlist</a>
+                <button onClick={handleClick}>Create Login</button>
             </div>
         </div>
     );
