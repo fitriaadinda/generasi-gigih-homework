@@ -1,0 +1,82 @@
+.login-btn {
+    padding-top: 20px;
+    display: grid;
+    place-items: center;
+}
+
+.button {
+    color: black;
+    width: 100px;
+    height: 35px;
+    border: 2px solid #1db954;
+    background: #1db954;
+    border-radius: 18px;
+}
+
+.button:hover {
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    width: 20%;
+    position: fixed;
+    overflow: auto;
+}
+
+li a {
+    display: block;
+    color: #666;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a.active,
+a:hover:not(.active) {
+    font-weight: bold;
+}
+
+.btn-search {
+    border-radius: 0px 18px 18px 0px;
+    height: 43px;
+}
+
+.search-input {
+    width: 250px;
+    height: 33px;
+    border: 2px;
+    border-radius: 18px 0px 0px 18px;
+}
+
+input[type="text"i] {
+    padding: 5px;
+}
+
+.content {
+    margin-left: 25%;
+    padding: 1px 16px;
+    height: 1000px;
+    background-color: #212121;
+}
+
+.parent {
+    height: auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.visual {
+    height: 100px;
+    width: 100%;
+}
+
+h4,
+p {
+    margin: 0
+}
+
+.add-btn {
+    margin-top: 10px;
+}

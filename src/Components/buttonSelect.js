@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import '../style/style.css';
 
 const SongItem = () => {
 
@@ -12,9 +13,9 @@ const SongItem = () => {
 
     let button;
     if (status === false){
-        button = <button className="selectButton" onClick={showAlert}>Select</button>
+        button = <button className="button add-btn" onClick={showAlert}>Add</button>
     } else {
-        button = <button className="deselectButton" onClick={showAlert}>Deselect</button>
+        button = <button className="button add-btn" onClick={showAlert}>Deselect</button>
     }
 
     return (

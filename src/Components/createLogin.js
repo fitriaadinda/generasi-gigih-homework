@@ -1,4 +1,6 @@
-const Navbar = () =>{
+import '../style/style.css';
+
+const CreateLogin = () =>{
     const handleClick = () =>{
         let scope = encodeURIComponent('playlist-modify-private');
         let redirect_uri = encodeURIComponent('http://localhost:3000');
@@ -7,12 +9,10 @@ const Navbar = () =>{
     }
 
     return(
-        <div>
-            <div className="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
-                <button onClick={handleClick}>Create Login</button>
-            </div>
+        <div className="login-btn">
+            <button className="button" onClick={handleClick}>Create Login</button>
         </div>
     );
 }
 
-export default Navbar;
+export default CreateLogin;
