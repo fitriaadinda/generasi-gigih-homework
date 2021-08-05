@@ -9,7 +9,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       search: '',
-      data: [],
+      tracks: [],
     };
   };
 
@@ -29,11 +29,11 @@ class App extends React.Component {
         'Authorization': `Bearer ${accessToken}`
       }
     }
+
+    const result =  await axios.get(`https://api.spotify.com/v1/search?q=${this.state.search}&type=track`, config)
     
-    const result =  await axios.get(`https://api.spotify.com/v1/search?q=${this.state.search}&type=album`, config)
-    console.log(result);
     this.setState({
-      playlists: result.data.albums.items,
+      tracks: result.data.tracks.items,
     });
   }
 
@@ -46,35 +46,32 @@ class App extends React.Component {
             <Navbar />
           </div>
           <div className="col-7" style={{backgroundColor: "rgba(27, 25, 25, 0.815)"}}>
-            <h1 style={{paddingTop: "30px"}}>Playlist</h1>
+            <h1 style={{paddingTop: "30px"}}>Search Song</h1>
             <input type="text" onChange={this.handleSearch} />
             <button onClick={this.handleClick}>Search</button>
             <table className="table" style={{color: "white"}}>
               <thead className="thead-light">
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">Image</th>
                   <th scope="col">Title</th>
                   <th scope="col">Artist</th>
                   <th scope="col">Album</th>
                 </tr>
               </thead>
-              {
-              this.state.data
-              .map(data => {
-                  return(
-                      <tbody>
+              <tbody>
+                  {
+                    this.state.tracks.map((data, index) => {
+                      return (
                         <tr>
-                          <th scope="row"></th>
-                          <td><img className="img" src={data.playlists.items.images[1].url} alt={data.playlists.name} /></td>
-                          <td>{data.playlists.name}</td>
-                          <td>{data.album.artists[0].name}</td>
+                          <th scope="row">{index + 1}</th>
+                          <td>{data.name}</td>
+                          <td>{data.artists[0].name}</td>
                           <td>{data.album.name}</td>
                         </tr>
-                      </tbody>
-                  );
-                })
-            }
+                      );
+                    })
+                  }
+              </tbody>
             </table>
           </div>
           <div className="col" style={{backgroundColor: "rgb(27, 25, 25)", padding: "20px"}}>
