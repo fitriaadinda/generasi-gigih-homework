@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Components/navbar';
 import axios from 'axios';
 import React from 'react';
+import Button from './Components/buttonSelect';
 
 class App extends React.Component {
   constructor(props) {
@@ -56,6 +57,7 @@ class App extends React.Component {
                   <th scope="col">Title</th>
                   <th scope="col">Artist</th>
                   <th scope="col">Album</th>
+                  <th scope="col">Select</th>
                 </tr>
               </thead>
               <tbody>
@@ -67,6 +69,7 @@ class App extends React.Component {
                           <td>{data.name}</td>
                           <td>{data.artists[0].name}</td>
                           <td>{data.album.name}</td>
+                          <td><Button /></td>
                         </tr>
                       );
                     })
